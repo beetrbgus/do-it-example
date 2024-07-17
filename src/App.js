@@ -7,12 +7,13 @@ import ChildProperty from './03/ChildProperty';
 import StateExam from './03/StateExam';
 import ForceUpdateExample from './03/ForceUpdateExample';
 import Count from './03/Count';
+import LifecycleExample from './03/LifecycleExample';
 
 class App extends React.Component {
   render() {
     return (
       <div className="body">
-        <Count/>
+        <LifecycleExample/>
       </div> 
     );
   }
