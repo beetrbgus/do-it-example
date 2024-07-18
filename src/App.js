@@ -8,13 +8,27 @@ import StateExam from './03/StateExam';
 import ForceUpdateExample from './03/ForceUpdateExample';
 import Count from './03/Count';
 import LifecycleExample from './03/LifecycleExample';
+import NewCounter from './03/NewCounter';
 
 class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {count : 0};
+    this.resetCount = this.resetCount.bind(this);
+
+  }
+  resetCount() {
+    this.setState(({count}) => ({count: count + 10}));
+  }
+
   render() {
     return (
       <div className="body">
-        <LifecycleExample/>
+        <div><Count count={this.state.count}/></div>
+        <div><NewCounter count={this.state.count}/></div>
+        <button onClick={this.resetCount}>{this.state.count + 10}으로 초기화</button>
       </div> 
+
     );
   }
 }
